@@ -1,6 +1,6 @@
 # YOOtheme Info Card Grid
 
-[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/tu-usuario/yootheme-info-card-grid/releases)
+[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/unmediacode/yootheme-info-card-grid/releases)
 [![WordPress](https://img.shields.io/badge/WordPress-5.8%2B-blue.svg)](https://wordpress.org/)
 [![YOOtheme](https://img.shields.io/badge/YOOtheme-Pro-orange.svg)](https://yootheme.com/)
 [![License](https://img.shields.io/badge/license-GPL--2.0%2B-green.svg)](LICENSE)
@@ -22,12 +22,12 @@ Plugin independiente que añade un elemento grid responsive "Info Card Grid" al 
 
 ```bash
 cd wp-content/plugins/
-git clone https://github.com/tu-usuario/yootheme-info-card-grid.git yootheme-info-card
+git clone https://github.com/unmediacode/yootheme-info-card-grid.git yootheme-info-card
 ```
 
 ### Manual
 
-1. Descarga el [último release](https://github.com/tu-usuario/yootheme-info-card-grid/releases)
+1. Descarga el [último release](https://github.com/unmediacode/yootheme-info-card-grid/releases)
 2. Sube la carpeta a `/wp-content/plugins/`
 3. Activa el plugin desde el panel de WordPress
 4. El elemento "Info Card Grid" estará disponible en YOOtheme Builder
@@ -222,9 +222,9 @@ GPL v2 or later - Ver [LICENSE](LICENSE) para más detalles.
 
 ## 👤 Autor
 
-**Tu Nombre**
-- GitHub: [@tu-usuario](https://github.com/tu-usuario)
-- Website: [https://example.com](https://example.com)
+**unmediacode**
+- GitHub: [@unmediacode](https://github.com/unmediacode)
+- Repo: [yootheme-info-card-grid](https://github.com/unmediacode/yootheme-info-card-grid)
 
 ## 🙏 Agradecimientos
 
