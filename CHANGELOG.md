@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.1] - 2024-11-19
+
+### Added
+- Sistema de actualización automática desde GitHub
+- WordPress ahora detecta nuevas versiones automáticamente
+- Actualización con un clic desde el panel de administración
+
+### Fixed
+- URLs actualizadas con usuario real de GitHub (unmediacode)
+
 ## [2.0.0] - 2024-11-19
 
 ### Changed
