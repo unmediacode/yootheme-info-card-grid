@@ -1,119 +1,136 @@
-# YOOtheme Info Card Element
+# YOOtheme Info Card Grid
 
-Plugin independiente que añade un elemento personalizado "Info Card" al constructor de YOOtheme Pro.
+[![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/tu-usuario/yootheme-info-card-grid/releases)
+[![WordPress](https://img.shields.io/badge/WordPress-5.8%2B-blue.svg)](https://wordpress.org/)
+[![YOOtheme](https://img.shields.io/badge/YOOtheme-Pro-orange.svg)](https://yootheme.com/)
+[![License](https://img.shields.io/badge/license-GPL--2.0%2B-green.svg)](LICENSE)
 
-## 📦 Características
+Plugin independiente que añade un elemento grid responsive "Info Card Grid" al constructor de YOOtheme Pro con soporte completo para contenido dinámico.
 
-- **Plugin independiente** - No requiere otros plugins (solo YOOtheme Pro)
-- **Elemento personalizado** - Aparece en el constructor de YOOtheme Pro
-- **Totalmente compatible** con contenido dinámico de cualquier fuente (Google Sheets, Custom Post Types, etc.)
+## ✨ Características
 
-## 🎨 Campos del Elemento
+- 🎯 **Grid Responsive** - Configurable por breakpoint (móvil, tablet, desktop)
+- 📊 **4 Campos de Información** - Con iconos personalizables
+- 🎨 **Opciones de Estilo Completas** - Para cada sección
+- ⚡ **Dynamic Content** - Soporte completo para cualquier fuente de datos
+- 🔧 **Altamente Configurable** - Basado en YOOtheme Panel Slider
+- 📱 **Mobile First** - Optimizado para todos los dispositivos
 
-Todos los siguientes campos soportan contenido dinámico:
+## 📦 Instalación
 
-- `image` - Imagen principal
-- `image_alt` - Texto alternativo de la imagen
-- `subtitle` - Subtítulo
-- `title` - Título principal
-- `content` - Contenido con editor
-- `info_line_1` a `info_line_8` - Líneas de información
-- `info_line_1_icon` a `info_line_8_icon` - Iconos para cada línea
-- `button_text` - Texto del botón
-- `button_link` - Enlace del botón
+### Desde GitHub (Recomendado)
 
-## Instalación
+```bash
+cd wp-content/plugins/
+git clone https://github.com/tu-usuario/yootheme-info-card-grid.git yootheme-info-card
+```
 
-1. Sube la carpeta del plugin a `/wp-content/plugins/`
-2. Activa el plugin desde el panel de WordPress
-3. El elemento "Info Card" estará disponible en YOOtheme Builder bajo "Custom"
+### Manual
 
-## Uso
+1. Descarga el [último release](https://github.com/tu-usuario/yootheme-info-card-grid/releases)
+2. Sube la carpeta a `/wp-content/plugins/`
+3. Activa el plugin desde el panel de WordPress
+4. El elemento "Info Card Grid" estará disponible en YOOtheme Builder
 
-### Uso Básico
+## 🚀 Uso Rápido
 
-1. Abre YOOtheme Builder
-2. Busca "Info Card" en la sección "Custom"
+1. Abre **YOOtheme Builder**
+2. Busca **"Info Card Grid"** en la sección **"Multiple Items"**
 3. Arrastra el elemento a tu layout
-4. Configura los campos según necesites
+4. Añade items y configura los campos
+5. Ajusta el grid desde **Settings → Layout**
 
-### Uso con Campos Dinámicos
+## 🎨 Campos Disponibles
 
-1. Haz clic en el icono de "Dynamic Content" (⚡) junto a cualquier campo
-2. Selecciona una fuente de datos (Post, Custom Field, etc.)
-3. Mapea el campo dinámico al campo del elemento
-4. El contenido se actualizará automáticamente
+### Por Item (todos con soporte dinámico):
 
-## Estructura de Archivos
+- **Content**
+  - Title
+  - Meta
+  - Content (editor)
+  - **Info Line 1-4** (con iconos)
+  - Image / Video
+  - Icon
+  - Link
 
-```
-yootheme-info-card/
-├── element/
-│   ├── element.json          # Configuración del elemento
-│   ├── element.php           # Lógica del elemento (namespace YOOtheme)
-│   ├── images/
-│   │   ├── icon.svg         # Icono del elemento
-│   │   └── iconSmall.svg    # Icono pequeño
-│   └── templates/
-│       ├── template.php     # Template de renderizado
-│       └── content.php      # Template de vista previa
-├── yootheme-info-card.php   # Archivo principal del plugin
-└── README.md
-```
+- **Settings**
+  - Panel style (card, tile)
+  - Title style, alignment, decorations
+  - Meta style, alignment
+  - Content style, columns
+  - **Info Lines style, margin, icon size/color**
+  - Image dimensions, border, transitions
+  - Link style
+
+### Contenedor:
+
+- **Layout**
+  - Columnas por breakpoint (1-6)
+  - Column gap / Row gap
+  - Vertical alignment
+  
+- **Content**
+  - Show/hide cada sección
+
+## 📱 Grid Responsive
+
+Por defecto:
+- **Móvil (Portrait)**: 1 columna
+- **Móvil (Landscape)**: 2 columnas
+- **Tablet+**: 3 columnas
+
+Totalmente configurable desde **Settings → Layout**.
+
+## ⚡ Dynamic Content
 
 ### Ejemplo con Google Sheets
 
-Si tienes el plugin "Google Sheets YOOtheme Connector" instalado:
-
-**Estructura de tu hoja:**
+**Estructura de la hoja:**
 ```
-| image_url | subtitle | title | description | info1 | info2 | info3 | button_text | button_link |
+| title | meta | content | info_1 | info_1_icon | info_2 | info_2_icon | image_url | link |
 ```
 
 **En YOOtheme:**
-1. Añade el elemento "Info Card"
-2. En cada campo, haz clic en "Dynamic"
-3. Selecciona "Google Sheet" o "Google Sheets"
-4. Mapea cada campo a su columna correspondiente
+1. Añade "Info Card Grid"
+2. Añade items
+3. En cada campo, clic en ⚡ "Dynamic"
+4. Selecciona "Google Sheets"
+5. Mapea cada campo a su columna
+
+### Ejemplo con Custom Post Types
+
+```php
+// En functions.php o plugin
+register_post_type('servicios', [
+    'public' => true,
+    'label' => 'Servicios',
+    'supports' => ['title', 'editor', 'thumbnail', 'custom-fields']
+]);
+```
+
+En YOOtheme Builder:
+1. Usa el campo dinámico "Post"
+2. Selecciona el post type "Servicios"
+3. Mapea los campos
 
 ## 🎯 Ejemplo Visual
 
-El elemento está diseñado para crear tarjetas como:
-
 ```
-┌─────────────────────────┐
-│      [IMAGEN]           │
-├─────────────────────────┤
-│ 2025-26 details coming  │
-│                         │
-│ PAY AND PLAY SWIMMING   │
-│ - PAID (£7,5 VIA PAYPAL)│
-│                         │
-│ Lorem ipsum dolor...    │
-│                         │
-│ 📍 All GLL Centres      │
-│ 📅 Ongoing access       │
-│ 💳 Pay & Play - £7,5    │
-│ 📄 Promotional leaflet  │
-│ 👤 Any Greater London   │
-│ 📞 Claudine Boothe      │
-│                         │
-│   [Registration +]      │
-└─────────────────────────┘
+┌──────────────┬──────────────┬──────────────┐
+│  [IMAGEN]    │  [IMAGEN]    │  [IMAGEN]    │
+├──────────────┼──────────────┼──────────────┤
+│ Meta Text    │ Meta Text    │ Meta Text    │
+│ TÍTULO       │ TÍTULO       │ TÍTULO       │
+│ Contenido... │ Contenido... │ Contenido... │
+│              │              │              │
+│ 📍 Info 1    │ 📍 Info 1    │ 📍 Info 1    │
+│ 📅 Info 2    │ 📅 Info 2    │ 📅 Info 2    │
+│ 💳 Info 3    │ 💳 Info 3    │ 💳 Info 3    │
+│ 📄 Info 4    │ 📄 Info 4    │ 📄 Info 4    │
+│              │              │              │
+│ [Ver más →]  │ [Ver más →]  │ [Ver más →]  │
+└──────────────┴──────────────┴──────────────┘
 ```
-
-## 🎨 Personalización
-
-El elemento usa clases de UIkit:
-- `uk-card` - Contenedor
-- `uk-card-default` - Estilo
-- `uk-card-body` - Padding
-- `uk-list` - Lista de información
-- `uk-button` - Botón
-
-Puedes añadir CSS personalizado en:
-- YOOtheme Pro → Customizer → Custom CSS
-- O en la pestaña "Advanced" del elemento
 
 ## 🔧 Requisitos
 
@@ -121,52 +138,100 @@ Puedes añadir CSS personalizado en:
 - PHP 7.4+
 - YOOtheme Pro (cualquier versión reciente)
 
-## 📝 Notas
+## 📂 Estructura del Proyecto
 
-- El elemento es completamente independiente
-- Funciona con cualquier fuente de datos de YOOtheme Pro
-- No requiere configuración adicional
-- Los iconos usan la librería de iconos de UIkit
+```
+yootheme-info-card/
+├── elements/
+│   ├── info_card/              # Contenedor
+│   │   ├── element.json
+│   │   ├── images/
+│   │   │   ├── icon.svg
+│   │   │   └── iconSmall.svg
+│   │   └── templates/
+│   │       ├── template.php
+│   │       └── content.php
+│   └── info_card_item/         # Item individual
+│       ├── element.json
+│       ├── element.php
+│       └── templates/
+│           ├── template.php
+│           ├── template-content.php
+│           ├── template-media.php
+│           ├── template-link.php
+│           └── ...
+├── yootheme-info-card.php      # Plugin principal
+├── README.md
+├── CHANGELOG.md
+└── .gitignore
+```
 
-## 🔄 Cambios Técnicos (v1.1.0)
+## 🔄 Actualizaciones
 
-### Correcciones para Campos Dinámicos
+### Método 1: Git Pull (Recomendado)
 
-Los siguientes cambios se realizaron para habilitar completamente el soporte de campos dinámicos:
+```bash
+cd wp-content/plugins/yootheme-info-card
+git pull origin master
+```
 
-1. **element.php**
-   - ✅ Agregado `namespace YOOtheme` (requerido por YOOtheme Pro)
-   - ✅ Simplificado el transform `render` para seguir el patrón de YOOtheme
-   - ✅ Eliminadas las manipulaciones de clases (movidas al template)
+### Método 2: Manual
 
-2. **template.php**
-   - ✅ Implementado sistema de helpers de YOOtheme (`$this->el()`)
-   - ✅ Actualizadas todas las referencias a usar `$props` directamente
-   - ✅ Mejoradas las comparaciones de campos vacíos (`!= ''` en lugar de truthy checks)
-   - ✅ Agregado soporte para `image_alt` dinámico
+1. Descarga el nuevo release
+2. Desactiva el plugin
+3. Reemplaza la carpeta
+4. Reactiva el plugin
 
-3. **element.json**
-   - ✅ Agregado campo `image_alt` con `altRef: "%name%_alt"`
-   - ✅ Todos los campos ya tenían `"source": true` ✓
-   - ✅ Agregado `image_alt` al fieldset
+## 🐛 Solución de Problemas
 
-4. **content.php**
-   - ✅ Actualizadas las comparaciones para usar `!= ''` y `!empty()`
-   - ✅ Agregado soporte para `image_alt`
+### Los campos dinámicos no aparecen
 
-### Por qué estos cambios son importantes
+1. Desactiva y reactiva el plugin
+2. Limpia la caché de YOOtheme (Settings → Advanced → Clear Cache)
+3. Verifica que YOOtheme Pro esté actualizado
 
-- **Namespace YOOtheme**: Permite que el elemento acceda a las clases y helpers de YOOtheme Pro
-- **Sistema $this->el()**: Renderiza correctamente los atributos y clases dinámicas
-- **Comparaciones != ''**: Evita problemas con valores falsy que no son cadenas vacías
-- **image_alt con altRef**: Permite que el alt text se mapee automáticamente desde fuentes dinámicas
+### El grid no se muestra correctamente
 
-## 🧪 Cómo Probar
+1. Verifica la configuración en Settings → Layout
+2. Revisa que no haya CSS personalizado conflictivo
+3. Prueba con un tema limpio de YOOtheme
 
-1. Desactiva y reactiva el plugin para limpiar la caché
-2. Abre YOOtheme Builder
-3. Añade el elemento "Info Card"
-4. Haz clic en el icono ⚡ junto a cualquier campo
-5. Deberías ver las opciones de "Dynamic Content"
-6. Selecciona una fuente (Post, Custom Field, Google Sheets, etc.)
-7. Mapea el campo y verifica que el contenido se muestre correctamente
+### Los iconos no se muestran
+
+1. Verifica que uses nombres válidos de UIkit icons
+2. Ejemplos: `home`, `user`, `mail`, `phone`, `location`, `calendar`
+3. Lista completa: https://getuikit.com/docs/icon
+
+## 🤝 Contribuir
+
+Las contribuciones son bienvenidas! Por favor:
+
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📝 Changelog
+
+Ver [CHANGELOG.md](CHANGELOG.md) para el historial completo de cambios.
+
+## 📄 Licencia
+
+GPL v2 or later - Ver [LICENSE](LICENSE) para más detalles.
+
+## 👤 Autor
+
+**Tu Nombre**
+- GitHub: [@tu-usuario](https://github.com/tu-usuario)
+- Website: [https://example.com](https://example.com)
+
+## 🙏 Agradecimientos
+
+- Basado en el elemento Panel Slider de YOOtheme Pro
+- Construido con [YOOtheme Pro](https://yootheme.com/)
+- Iconos por [UIkit](https://getuikit.com/)
+
+---
+
+⭐ Si este plugin te resulta útil, considera darle una estrella en GitHub!
