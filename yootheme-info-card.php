@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: YOOtheme Info Card Grid
+ * Plugin Name: Unmedia Info Card Grid
  * Plugin URI: https://github.com/unmediacode/yootheme-info-card-grid
  * Description: Añade un elemento grid responsive "Info Card Grid" al constructor de YOOtheme Pro con múltiples campos de información personalizables. ✨ Actualizaciones automáticas desde GitHub.
- * Version: 2.0.2
+ * Version: 2.0.3
  * Author: unmediacode
  * Author URI: https://github.com/unmediacode
  * License: GPL v2 or later
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 }
 
 // Definir constantes
-define('YOOTHEME_INFO_CARD_VERSION', '2.0.2');
+define('YOOTHEME_INFO_CARD_VERSION', '2.0.3');
 define('YOOTHEME_INFO_CARD_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('YOOTHEME_INFO_CARD_PLUGIN_URL', plugin_dir_url(__FILE__));
 
